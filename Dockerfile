@@ -2,7 +2,7 @@
 FROM python:3.10.12
 
 # Metadata
-LABEL org.opencontainers.image.authors="A. Mhamdi"
+LABEL author="A. Mhamdi"
 LABEL version="latest"
 
 # Install nvm (Node Version Manager)
@@ -22,7 +22,6 @@ COPY .jupyter .venv/.jupyter
 RUN bash -c "source $HOME/.nvm/nvm.sh && nvm install 22 && jupyter lab build"
 WORKDIR /jl/work
  
-# Expose 2468
 EXPOSE 2468
 
 # Default command
